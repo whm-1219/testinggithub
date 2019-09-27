@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome to 灵动！</title>
+    <style type="text/css">
+        *{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .line{
+            border-left: 1px solid rgba(255, 255, 255, .3);
+        }
+        #nav{
+            width: 1350px;
+            height: 60px;
+            margin: 0 auto;
+            background-color: #FF2d00;
+        }
+        #nav img{
+            width: 143px;
+            height: 60px;
+            float: left;
+            margin: 0 auto auto 65px;
+        }
+        #nav ul{
+            width: 700px;
+            height: 60px;
+            float: left;
+            margin: auto auto auto 150px;
+            /*background-color: #ccc;*/
+        }
+        #nav ul li{
+            list-style-type: none;
+            display:block;
+            float: left;
+            border-right: 1px solid rgba(255, 255, 255, .3);
+            position:relative;
+        }
+        #nav ul li a{
+            display:block;
+            line-height: 60px;
+            font-size: 17px;
+            color:#000;
+            text-decoration: none;
+            text-align: center;
+            width: 75px;
+            height:60px;
+        }
+        #nav ul li a:hover{
+            background-color: rgba(0, 0, 0, 0.9);
+            color:#FF2d00;
+        }
+        #nav ul li ul{
+            display:none;
+            width: 75px;
+            height: 160px;
+            position:absolute;
+            top:60px;
+            right:1px;
+            background-color: #fff;
+        }
+        #nav ul li:hover ul{
+            display:block;
+        }
+        #nav ul li ul li{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border-right:0;
+            border-top:1px solid rgba(0, 0, 0, .1);
+        }
+        #nav ul li ul li a{
+            width: 75px;
+            height:45px;
+            font-size: 14px;
+            line-height: 45px;
+        }
+        #online ul{
+            width: 140px;
+            height: 60px;
+            float: left;
+            /*background-color: #f00;*/
+            margin: auto 10px auto auto;
+        }
+        #online ul li{
+            list-style-type: none;
+            font-family: "微软雅黑";
+            float: left;
+            width: 70px;
+            height:60px;
+            line-height: 60px;
+            text-align: center;
+        }
+        #online ul li a{
+            font-family: 20px;
+            text-decoration: none;
+        }
+        #slide{
+            width: 1350px;
+            height: 350px;
+            margin: 0 auto;
+            /*background-color: #f00;*/
+        }
+        #img{
+            width: 1130px;
+            height: 300px;
+            overflow:hidden;
+            border:1px solid #fff;
+            border-radius: 5px;
+            margin: 30px 110px auto auto;
+        }
+        #arrow{
+            height: 100px;
+            position: relative;
+            top: -155px;
+        }
+        #previous,#next{
+            width: 50px;
+            height: 50px;
+            color:#fff;
+            font-weight: normal;
+            font-family: "宋体";
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 50%;
+            font-size: 40px;
+            line-height: 48px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #previous:hover{
+            color:#FF2d00;
+        }
+        #next:hover{
+            color:#FF2d00;
+        }
+        #previous{
+            float: left;
+            margin: auto auto auto 130px;
+        }
+        #next{
+            float: right;
+            margin: auto 130px auto auto;
+        }
+        #dot{
+            height: 10px;
+            position:relative;
+            left:590px;
+            top:-145px;
+        }
+        #dot h1{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            margin: 0 0 0 3px;
+            cursor:pointer;
+        }
+        #dot h1.red{
+            background-color: #f00;
+        }
+        #above{
+            width: 1350px;
+            height: 155px;
+            margin: 0 auto;
+            position: relative;
+            left: -22px;
+            top: -20px;
+            /*background-color: #0f0;*/
+        }
+        #above img{
+            width: 215px;
+            height: 165px;
+            margin: auto 6px auto auto;
+        }
+        #middle{
+            width: 1350px;
+            height: 99px;
+            margin: 0 auto;
+            float: left;
+            position:relative;
+            left：100px;
+            background-color: #FF2d00;
+        }
+        #middle.fixed{
+            width: 100%;
+            position:fixed;
+            top:0;
+        }
+        #middle ul{
+            width: 1350px;
+            height: 108px;
+            margin: 35px auto auto 552px;
+        }
+        #middle ul li{
+            list-style-type: none;
+            font-family: "微软雅黑";
+            float: left;
+            width: 80px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;   
+        }
+        #middle ul li:hover{
+            text-decoration: underline;
+            color:#fff;
+        } 
+        #below{
+            width: 1350px;
+            height: 770px;
+            background-color: #FF2d00;
+        }  
+        #below1{
+            width: 1350px;
+            height: 330px;
+            margin: 0 auto;
+            margin: auto auto auto 112px;
+        }
+        #below1 img{
+            width: 210px;
+            height: 307px;
+            border-radius: 5px;
+            margin: auto 15px auto auto;
+        }
+        #below1 img:hover{
+            box-shadow: 7px 7px 5px rgba(0,0,0,.4);
+        }
+        #below2{
+            width: 1350px;
+            height: 350px;
+            margin: 0 auto;
+        }
+        #below2 img{
+            width: 210px;
+            height: 307px;
+            border-radius: 5px;
+            margin: 10px 15px auto auto;
+        }        
+        #footer{
+            width: 1350px;
+            height: 225px;
+            margin:440px auto 0 auto;
+            background-color: #595959;
+        }
+        #footer img{
+            width: 959px;
+            height: 148px;
+            margin: 0 auto 0 200px;
+        }
+        </style>
+    </head>
+    <body>
+    <div id="nav">
+        <img src="images/logo.jpg" alt="" />
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">发现</a></li>
+            <li><a href="">同城</a></li>
+            <li><a href="">课程</a></li>
+            <li><a href="">职位</a>
+                <ul>
+                    <li><a href="">职位</a></li>
+                    <li><a href="">公司</a></li>
+                    <li><a href="">城市</a></li>
+                    <li><a href="">发布职位</a></li>
+                </ul>
+            </li>
+            <li><a href="活动.html">活动</a>
+                <ul>
+                    <li><a href="">设计大赛</a></li>
+                    <li><a href="">专题策划</a></li>
+                    <li><a href="">线上活动</a></li>
+                    <li><a href="">线下活动</a></li>
+                </ul>
+            </li>
+            <li><a href="">正版素材</a>
+                <ul>
+                    <li><a href="">图片</a></li>
+                    <li><a href="">视频</a></li>
+                    <li><a href="">字体</a></li>
+                    <li><a href="">音乐</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div id="online">
+            <ul>
+                <li class="line"><a href="登陆界面.html">登陆</a></li>
+                <li><a href="">注册</a></li>
+            </ul>
+        </div>
+    </div>
+     <div id="slide">
+        <div id="img">
+          <img src="images/tu1.jpg" alt="" />
+          <img src="images/tu2.jpg" alt="" />
+          <img src="images/tu3.jpg" alt="" />
+          <img src="images/tu4.jpg" alt="" />
+          <img src="images/tu5.jpg" alt="" />
+          <img src="images/tu6.jpg" alt="" />
+        </div>
+        <div id="arrow">
+          <div id="previous"><</div>
+          <div id="next">></div>
+        </div>
+        <div id="dot" class="red">
+          <h1>1</h1>
+          <h1>2</h1>
+          <h1>3</h1>
+          <h1>4</h1>
+          <h1>5</h1>
+          <h1>6</h1>
+        </div>
+    </div>
+    </div>
+    <div id="above">
+        <img src="images/above1.jpg" alt="" />
+        <img src="images/above2.jpg" alt="" />    
+        <img src="images/above3.jpg" alt="" />    
+        <img src="images/above4.jpg" alt="" />    
+        <img src="images/above5.jpg" alt="" />    
+    </div>
+    <div id="middle">
+        <ul>
+            <li>首页推荐</li>
+            <li>最新发布</li>
+            <li>上升最快</li>
+        </ul>
+    </div>
+    <div id="below">
+        <div id="below1">
+            <img src="images/below1.jpg" alt="" />    
+            <img src="images/below2.jpg" alt="" /> 
+            <img src="images/below3.jpg" alt="" /> 
+            <img src="images/below4.jpg" alt="" /> 
+            <img src="images/below5.jpg" alt="" />
+        <div id="below2">
+            <img src="images/below6.jpg" alt="" />
+            <img src="images/below7.jpg" alt="" />
+            <img src="images/below8.jpg" alt="" />
+            <img src="images/below9.jpg" alt="" />
+            <img src="images/below10.jpg" alt="" />
+        </div>
+    </div>
+    <div id="footer">
+        <img src="images/footer.jpg" alt="" />
+    </div>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var n = 0;
+            function slideImg(){
+                    n++;
+                    if(n>$("#dot h1").length-1){
+                        n=0;
+                    }
+                    $("#img img").hide();
+                    $("#img img").eq(n).fadeIn();
+                    $("#dot h1").removeClass("red");
+                    $("#dot h1").eq(n).addClass("red");
+            }
+            var interval=setInterval(slideImg,3000);
+            jQuery(document).ready(function($) {
+                $("#dot h1").mouseover(function(event){
+                    n=$("#dot h1").index(this);
+                    $("#img img").hide();
+                    $("#img img").eq(n).fadeIn();
+                    $("#dot h1").removeClass("red");
+                    $("#dot h1").eq(n).addClass("red");
+                    });
+                $("#previous").click(function(event){
+                    n--;
+                    if(n<0){
+                        n=$("#dot h1").length-1;
+                    }
+                    $("#img img").hide();
+                    $("#img img").eq(n).fadeIn();
+                    $("#dot h1").removeClass("red");
+                    $("#dot h1").eq(n).addClass("red");
+                    });
+                $("#next").click(function(event){
+                    n++;
+                    if(n>$("#dot h1").length-1){
+                        n=0;
+                    }
+                    $("#img img").hide();
+                    $("#img img").eq(n).fadeIn();
+                    $("#dot h1").removeClass("red");
+                    $("#dot h1").eq(n).addClass("red");
+                    });
+            });
+            var pagenav=document.getElementById("middle");
+            var pagenav_top=pagenav.offsetTop;
+                window.onscroll=function(){
+                    var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                    if(scrollTop<pagenav_top){
+                        pagenav.classsName="";
+                    }else{
+                        pagenav.className="fixed";
+                    }
+                    if(scrollTop>pagenav_top){
+                        pagenav.classsName="fixed";
+                    }else{
+                        pagenav.className="";
+                    }
+                }
+        </script>
+    </body>
+</html>
